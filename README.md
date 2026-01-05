@@ -108,9 +108,9 @@ curl，mbstring，mysqli，openssl，zip，pdo_mysql，fileinfo
 2. `git clone https://gitee.com/MarcoMaHH/rent8.git`
 3. `cd rent8`
 4. 将.example.env改为.env，并修改其中的数据库用户名和密码,如果使用微信小程序，则还需要填写appID和appSecret。
-5. `composer install` 在/public执行
-6. `php think migrate:run` /根目录执行
-7. `php think seed:run`/根目录执行
+5. `composer install` 
+6. `php think migrate:run` 
+7. `php think seed:run`
 
 PS:宝塔面板安装的，需要在禁用函数里移除putenv()、pcntl_signal()、proc_open()这3个函数。
 
@@ -155,10 +155,18 @@ PS:宝塔面板安装的，需要在禁用函数里移除putenv()、pcntl_signal
       
    7. 注意，以下命令需要完成以上操作后才能输入，
       
-   9. `composer install`
+   9. `composer install`在     /public执行
        
-   11. `php think migrate:run`
+   11. `php think migrate:run`   /根目录执行
        
-   13. `php think seed:run`
+   13. `php think seed:run`   /根目录执行
        
    10.在宝塔的网站，设置，网站目录，运行目录选择/public
+
+常见问题：
+登陆时出现接口错误
+解决：
+1.F12看看是不是Failed to load resource: the server responded with a status of 404错误，如果是，请在public执行 composer install。
+
+2.Error: F12看看是不是 Request failed with status code 500，如果是，请检测数据库链接，特别是看看example.env十分已经改为.env
+
