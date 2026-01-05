@@ -108,9 +108,9 @@ curl，mbstring，mysqli，openssl，zip，pdo_mysql，fileinfo
 2. `git clone https://gitee.com/MarcoMaHH/rent8.git`
 3. `cd rent8`
 4. 将.example.env改为.env，并修改其中的数据库用户名和密码,如果使用微信小程序，则还需要填写appID和appSecret。
-5. `composer install`
-6. `php think migrate:run`
-7. `php think seed:run`
+5. `composer install` 在/public执行
+6. `php think migrate:run` /根目录执行
+7. `php think seed:run`/根目录执行
 
 PS:宝塔面板安装的，需要在禁用函数里移除putenv()、pcntl_signal()、proc_open()这3个函数。
 
