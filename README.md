@@ -132,23 +132,33 @@ PS:宝塔面板安装的，需要在禁用函数里移除putenv()、pcntl_signal
    ```
 
 
-  ### fghdlz修改：
-    注意，关于使用宝塔部署的注意事项和部署顺序
-   1.git clone后，请修改站点文件和子文件权限755，否则会提示权限不足
-   2.应用商店找到，php8.1设置选择修改在安装好php8.1的时候，请禁用函数里移除putenv、pcntl_signal、proc_open这3个函数，可以ctrl+F搜索移除，无需添加括号（）
-   3.最新版宝塔已经安装好curl，mbstring，mysqli，openssl，zip，pdo_mysql。你只需安装：fileinfo 即可，可以应用商店找打你的php8.1设置选择修改
-   4.在站点目录找到rent8.sql，然后导入，成功导入后请删除该文件
-   5. 将.example.env改为.env，并修改其中的数据库用户名和密码,如果使用微信小程序，则还需要填写appID和appSecret。如果你只是网页访问，那没必要
-   6. 注意，以下命令需要完成以上操作后才能输入，
-   7. `composer install`
-   8. `php think migrate:run`
-   9. `php think seed:run`
-   10.在宝塔的网站，设置，网站目录，运行目录选择/public
-
-   
 
 ### 原始账号密码
 
 账号：admin  密码：123456
 
 账号：user     密码：123456
+
+
+  ### fghdlz修改：
+    注意，关于使用宝塔部署的注意事项和部署顺序
+    
+   1.git clone后，请修改站点文件和子文件权限755，否则会提示权限不足
+   
+   2.应用商店找到，php8.1设置选择修改在安装好php8.1的时候，请禁用函数里移除putenv、pcntl_signal、proc_open这3个函数，可以ctrl+F搜索移除，无需添加括号（）
+   
+   3.最新版宝塔已经安装好curl，mbstring，mysqli，openssl，zip，pdo_mysql。你只需安装：fileinfo 即可，可以应用商店找打你的php8.1设置选择修改
+   
+   4.在站点目录找到rent8.sql，然后导入，成功导入后请删除该文件
+   
+   5. 将.example.env改为.env，并修改其中的数据库用户名和密码,如果使用微信小程序，则还需要填写appID和appSecret。如果你只是网页访问，那没必要
+      
+   7. 注意，以下命令需要完成以上操作后才能输入，
+      
+   9. `composer install`
+       
+   11. `php think migrate:run`
+       
+   13. `php think seed:run`
+       
+   10.在宝塔的网站，设置，网站目录，运行目录选择/public
